@@ -1,6 +1,6 @@
-package com.covertlizard.cgr.thread;
+package com.github.covertlizard.cgr.thread;
 
-import com.covertlizard.cgr.lib.Glock;
+import com.github.covertlizard.cgr.lib.Glock;
 import org.bukkit.plugin.java.JavaPlugin;
 
 /****************************************************

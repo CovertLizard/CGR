@@ -1,7 +1,7 @@
-package com.covertlizard.cgr;
+package com.github.covertlizard.cgr;
 
-import com.covertlizard.cgr.listener.Listener;
-import com.covertlizard.cgr.listener.ListenerJoin;
+import com.github.covertlizard.cgr.listener.Listener;
+import com.github.covertlizard.cgr.listener.ListenerJoin;
 import org.bukkit.plugin.java.JavaPlugin;
 
 /****************************************************

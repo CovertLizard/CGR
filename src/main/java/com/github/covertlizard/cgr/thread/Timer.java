@@ -1,4 +1,4 @@
-package com.covertlizard.cgr.thread;
+package com.github.covertlizard.cgr.thread;
 
 import org.bukkit.plugin.java.JavaPlugin;
 

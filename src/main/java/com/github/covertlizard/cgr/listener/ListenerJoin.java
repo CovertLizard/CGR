@@ -1,9 +1,9 @@
-package com.covertlizard.cgr.listener;
+package com.github.covertlizard.cgr.listener;
 
-import com.covertlizard.cgr.game.State;
-import com.covertlizard.cgr.lib.Bucket;
-import com.covertlizard.cgr.reference.Reference;
-import com.covertlizard.cgr.thread.Timer;
+import com.github.covertlizard.cgr.game.State;
+import com.github.covertlizard.cgr.lib.Bucket;
+import com.github.covertlizard.cgr.reference.Reference;
+import com.github.covertlizard.cgr.thread.Timer;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;

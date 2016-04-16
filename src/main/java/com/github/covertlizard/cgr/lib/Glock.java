@@ -1,4 +1,4 @@
-package com.covertlizard.cgr.lib;
+package com.github.covertlizard.cgr.lib;
 
 /****************************************************
  * Created: 2/3/2016 at 4:13 PM by CovertLizard

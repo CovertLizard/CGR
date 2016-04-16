@@ -1,4 +1,4 @@
-package com.covertlizard.cgr.game;
+package com.github.covertlizard.cgr.game;
 
 /****************************************************
  * Created: 4/16/2016 at 4:12 PM by CovertLizard

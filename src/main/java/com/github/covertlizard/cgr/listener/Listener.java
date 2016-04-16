@@ -1,4 +1,4 @@
-package com.covertlizard.cgr.listener;
+package com.github.covertlizard.cgr.listener;
 
 import org.bukkit.plugin.java.JavaPlugin;
 

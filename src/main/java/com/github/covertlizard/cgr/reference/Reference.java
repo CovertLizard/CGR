@@ -1,4 +1,4 @@
-package com.covertlizard.cgr.reference;
+package com.github.covertlizard.cgr.reference;
 
 /****************************************************
  * Created: 4/16/2016 at 4:47 PM by CovertLizard

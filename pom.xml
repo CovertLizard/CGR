@@ -36,7 +36,6 @@
     </dependencies>
 
     <build>
-
         <!--Plugins used during build phase.-->
         <plugins>
 
@@ -68,6 +67,7 @@
                     <archive>
                         <manifestFile>src/main/resources/META-INF/MANIFEST.MF</manifestFile>
                     </archive>
+                    <outputDirectory>${project.basedir}/server/plugins</outputDirectory>
                 </configuration>
             </plugin>
 
