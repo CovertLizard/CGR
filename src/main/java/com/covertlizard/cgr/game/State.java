@@ -11,6 +11,11 @@ public enum State
     LOBBY, PREGAME, GAME, POSTGAME, END;
     public static State current = State.LOBBY;
 
+    public static boolean is(State state)
+    {
+        return State.current == state;
+    }
+
     /**
      * Makes the selected state the current state
      */

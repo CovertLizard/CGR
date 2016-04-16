@@ -1,5 +1,7 @@
 package com.covertlizard.cgr;
 
+import com.covertlizard.cgr.listener.Listener;
+import com.covertlizard.cgr.listener.ListenerJoin;
 import org.bukkit.plugin.java.JavaPlugin;
 
 /****************************************************
@@ -13,6 +15,6 @@ public class Core extends JavaPlugin
     @Override
     public void onEnable()
     {
-
+        Listener.register(this, new ListenerJoin());
     }
 }
