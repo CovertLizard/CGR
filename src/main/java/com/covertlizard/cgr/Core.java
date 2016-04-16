@@ -14,6 +14,5 @@ public class Core extends JavaPlugin
     public void onEnable()
     {
         this.getLogger().info("Project template.");
-
     }
 }

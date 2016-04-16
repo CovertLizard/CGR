@@ -10,6 +10,14 @@ import org.bukkit.plugin.java.JavaPlugin;
 @SuppressWarnings("all")
 public abstract class Timer implements Runnable
 {
+    private final JavaPlugin plugin;
+    private final long delay, period;
+    private int id;
+
+
+
+
+
     /**
      * Creates an Asyncronous timer
      * @param plugin the plugin instance
@@ -18,6 +26,47 @@ public abstract class Timer implements Runnable
      */
     public Timer(JavaPlugin plugin, long delay, long period)
     {
-        plugin.getServer().getScheduler().runTaskTimerAsynchronously(plugin, this, delay, period);
+        this.plugin = plugin;
+        this.delay = delay;
+        this.period = period;
+    }
+
+
+
+
+
+
+    /**
+     * Starts the timer Syncronously
+     */
+    public void start()
+    {
+        this.id = this.plugin.getServer().getScheduler().runTaskTimer(this.plugin, this, this.delay, this.period).getTaskId();
+    }
+
+
+
+
+
+
+    /**
+     * Starts the timer Asyncronously
+     */
+    public void startAsync()
+    {
+        this.id = this.plugin.getServer().getScheduler().runTaskTimerAsynchronously(this.plugin, this, this.delay, this.period).getTaskId();
+    }
+
+
+
+
+
+
+    /**
+     * Stops the timer
+     */
+    public void stop()
+    {
+        this.plugin.getServer().getScheduler().cancelTask(this.id);
     }
 }

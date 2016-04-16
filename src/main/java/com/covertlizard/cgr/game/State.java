@@ -9,7 +9,7 @@ package com.covertlizard.cgr.game;
 public enum State
 {
     LOBBY, PREGAME, GAME, POSTGAME, END;
-    public static State current;
+    public static State current = State.LOBBY;
 
     /**
      * Makes the selected state the current state
