@@ -1,7 +1,7 @@
 name: CGR
 version: %PLUGIN_VERSION%
 description: Core Games Reboom
-load: STARTUP
+load: POSTWORLD
 author: CovertLizard
 website: https://github.com/CovertLizard/CGR
 main: com.github.covertlizard.cgr.Core

@@ -8,5 +8,15 @@ package com.github.covertlizard.cgr.lib;
 @SuppressWarnings("all")
 public class Bucket
 {
-    public static int playerCount = 0;
+    public static int count = 0;
+
+    public static synchronized void setCount(int count)
+    {
+        Bucket.count = count;
+    }
+
+    public static synchronized int getCount()
+    {
+        return Bucket.count;
+    }
 }

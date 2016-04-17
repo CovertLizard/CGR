@@ -1,6 +1,11 @@
 package com.github.covertlizard.cgr.thread;
 
-import com.github.covertlizard.cgr.lib.Glock;
+import com.github.covertlizard.cgr.display.Plank;
+import com.github.covertlizard.cgr.display.PlankLobby;
+import com.github.covertlizard.cgr.event.Event;
+import com.github.covertlizard.cgr.event.EventGameStart;
+import com.github.covertlizard.cgr.game.State;
+import com.github.covertlizard.cgr.lib.Color;
 import org.bukkit.plugin.java.JavaPlugin;
 
 /****************************************************
@@ -12,30 +17,31 @@ import org.bukkit.plugin.java.JavaPlugin;
 @SuppressWarnings("all")
 public class TimerLobby extends Timer
 {
-    private Glock glock = new Glock(60, 0 ,0);
+    private int time = 20;
 
     public TimerLobby(JavaPlugin plugin)
     {
         super(plugin, 0, 20);
+        Plank.PLANKS[0] = new PlankLobby();
     }
 
     @Override
     public Timer stop()
     {
-        this.glock = new Glock(60, 0, 0); // reset the clock
+        this.time = 20; // reset time
         return this;
     }
 
     @Override
     public void run()
     {
-        if(this.glock.getSeconds() == 0)
+        Plank.PLANKS[0].insert(7, Color.YELLOW + "" + this.time + " seconds"); // update time
+        if(!State.is(State.LOBBY) || this.time <= 0)
         {
-            this.stop();
-            // todo start game
+            Event.call(new EventGameStart()); // call game start event
+            super.stop();
             return;
         }
-        this.glock.decrement();
-        // todo display current time to players
+        this.time--;
     }
 }

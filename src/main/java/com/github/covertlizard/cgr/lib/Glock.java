@@ -64,6 +64,11 @@ public class Glock
         return this.millis / 1000;
     }
 
+    public long getMillis()
+    {
+        return this.millis;
+    }
+
     public long getMinutes()
     {
         return this.millis / 1000 / 60;
@@ -76,6 +81,6 @@ public class Glock
 
     public String format()
     {
-        return (this.hours == 0 ? "" : this.hours + ":") + (this.hours == 0 && this.minutes < 10 ? "0" + this.minutes : this.minutes) + ":" + (this.seconds < 10 ? "0" + this.seconds : this.seconds);
+        return (this.minutes < 10 ? "0" + this.minutes : this.minutes) + " : " + (this.seconds < 10 ? "0" + this.seconds : this.seconds);
     }
 }

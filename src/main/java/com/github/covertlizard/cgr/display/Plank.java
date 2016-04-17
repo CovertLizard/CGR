@@ -3,14 +3,17 @@ package com.github.covertlizard.cgr.display;
 /****************************************************
  * Created: 2/9/2016 at 5:22 PM by CovertLizard
  * FQN: com.github.covertlizard.cgr.display
- * Info: Scoreboard utility class
+ * Info: This class is used for creating and modifying
+ *       scoreboards
  ****************************************************/
 @SuppressWarnings("all")
-public class Plank
+public abstract class Plank
 {
+    public static final Plank[] PLANKS = new Plank[10];
     protected final org.bukkit.scoreboard.Scoreboard scoreboard;
     protected final org.bukkit.scoreboard.Objective objective;
     protected final java.util.HashMap<Integer, Object> scores = new java.util.HashMap<>();
+    private int index = 0; // color index
 
     /**
      * Creates a new Plank instance
@@ -28,7 +31,7 @@ public class Plank
      * @param value the value
      * @return the Plank instance
      */
-    protected final Plank insert(int score, Object value)
+    public final Plank insert(int score, Object value)
     {
         if(this.scores.containsKey(score)) this.remove(score);
         this.scores.put(score, value);
@@ -40,9 +43,8 @@ public class Plank
      * @param score the score
      * @return the Plank instance
      */
-    protected final Plank remove(int score)
+    public final Plank remove(int score)
     {
-        if(!this.scores.containsKey(score)) return this;
         this.scoreboard.resetScores(this.scores.get(score).toString());
         this.scores.remove(score);
         return this;
@@ -53,9 +55,11 @@ public class Plank
      * @param index the score
      * @return the Plank instance
      */
-    protected final Plank space(int score)
+    public final Plank space(int score)
     {
-        return this.insert(score,  org.bukkit.ChatColor.BLACK);
+        this.insert(score, com.github.covertlizard.cgr.lib.Color.values()[this.index]);
+        this.index += this.index == com.github.covertlizard.cgr.lib.Color.values().length ? 0 : 1;
+        return this;
     }
 
     /**

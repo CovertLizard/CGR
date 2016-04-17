@@ -26,7 +26,6 @@ public abstract class Timer implements Runnable
         this.plugin = plugin;
         this.delay = delay;
         this.period = period;
-        Timer.TIMERS[0] = new TimerLobby(plugin);
     }
 
     /**

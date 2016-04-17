@@ -1,7 +1,7 @@
 package com.github.covertlizard.cgr;
 
-import com.github.covertlizard.cgr.listener.Listener;
-import com.github.covertlizard.cgr.listener.ListenerJoin;
+import com.github.covertlizard.cgr.listener.*;
+import com.github.covertlizard.cgr.thread.*;
 import org.bukkit.plugin.java.JavaPlugin;
 
 /****************************************************
@@ -15,6 +15,10 @@ public class Core extends JavaPlugin
     @Override
     public void onEnable()
     {
+        Timer.TIMERS[0] = new TimerLobby(this);
+        Timer.TIMERS[1] = new TimerWarm(this);
         Listener.register(this, new ListenerJoin());
+        Listener.register(this, new ListenerGame());
+        Listener.register(this, new ListenerMove());
     }
 }

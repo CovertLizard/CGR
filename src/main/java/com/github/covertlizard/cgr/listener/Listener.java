@@ -11,7 +11,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 @SuppressWarnings("all")
 public class Listener implements org.bukkit.event.Listener
 {
-    private JavaPlugin plugin;
+    protected JavaPlugin plugin;
 
     public void setPlugin(JavaPlugin plugin)
     {
